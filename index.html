@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>IO</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            OPTIMIZACION POR ENJAMBRE DE LUCIERNAGAS Y SU APLICACION EN LA OPTIMIZACION DE PESOS EN UNA RED NEURONAL,
+            CON APLICACIONES DE SELECCION NATURAL Y ALGORITMOS GENETICOS
+        </h1>
+
+
+        <span>Kikuchi Yamamoto, Erick Kaito</span>
+        <span>
+            <b>
+                erick.kikuchi@fiuni.edu.py
+            </b>
+        </span>
+
+        <span>Trinidad Ocampos, Demetrio Abel</span>
+        <span>
+            <b>
+                demetrio.trinidad2019@fiuni.edu.py
+            </b>
+        </span>
+        <span>
+            Facultad de Ingeniería de la Universidad Nacional de Itapúa.
+        </span>
+        <span>
+            C. Lorenzo Luciano Zacarias, Encarnación
+        </span>
+        <span>
+            Encarnación
+        </span>
+        <span>
+            Itapúa
+        </span>
+        <span>
+            Paraguay
+        </span>
+        <span>
+            6000
+        </span>
+    </header>
+
+
+    <section>
+        <h2>Resumen</h2>
+        <p>
+            En este articulo de investigación se hablará de un breve resumen de las evoluciones del algorítmo de
+            optimización por enjambre de luciernagas en los recientes años, y como podremos aplicar este algorítmo en la
+            optimización de una red neuronal.
+        </p>
+    </section>
+
+
+
+
+    <section>
+        <h2>Palabras Claves</h2>
+        <p>
+            Redes Neuronales, Optimización, Enjambre de Luciérnagas, Inteligencia Artificial, Aprendizaje Supervisado,
+            Selección Natural, Algoritmos Genéticos.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>1 Introduction</h2>
+        <p>
+            Optimizar, buscar la eficiencia y eficacia sobre todo, es un arte
+            que no solo mejoró la calidad de vida de una considerable cantidad
+            de personas en el mundo, sino también generó varias posibilidades
+            de evolución de la tecnología.
+            <br>
+            Optimización por enjambre de luciérnagas, es un algoritmo presen-
+            tado por primera vez por Yang X en 2009 [20], que es un algoritmo
+            metaheurístico [12], [8], Inspirado en la naturaleza [4], [5], utilizado
+            en varias áreas, como en medicina [18][11], en deep learnings como
+            [16], así también en softwares y optimizaciones como [7][2].
+            <br>
+            En esta investigación nos enfocaremos en los ultimos avances que
+            presentó el algoritmo de optimización, y así también basado en eso,
+            ingeniarnos una aplicación en el área de la inteligencia artificial, y
+            probar dicho algoritmo en la optimización de la red.
+        </p>
+    </section>
+
+    <section>
+        <h2>2 Estado del Arte</h2>
+
+        <section>
+            <h3>
+                2.1 Optimización por Enjambre de Luciérnagas
+            </h3>
+            <p>
+                Es un método de optimización estocástico multidimecional, inspirado a la naturaleza de las luciérnagas,
+                y la luminosidad. Es un algoritmo calificado como una rama de la inteligencia de enjambre. Surgio en
+                2009 a manos de Yang X.
+                En los últimos años el algoritmo de luciérnagas ha sido aplicado en distintas soluciones como:
+            </p>
+            <ol>
+                <li>
+                    Optimización de problemas de diseño de instalaciones [17].
+                </li>
+                <li>
+                    Metodos de enrutamiento con conciencia energetica en redes voladoras ad-hoc (FANET) [9].
+                </li>
+                <li>
+                    Problemas de diseño de ingeniería (EDP) [3].
+                </li>
+                <li>
+                    El cálculo de la sensibilidad a las lesiones deportivas de los atletas de artes marciales según la
+                    curva ROC [18].
+                </li>
+                <li>
+                    Predicción de defectos de software [6].
+                </li>
+                <li>
+                    IDS modificado basado en el algoritmo de optimización Firefly para ciberseguridad inspirada en la
+                    naturaleza [15]
+                </li>
+            </ol>
+        </section>
+        <section>
+            <h3>2.2 Redes Neuronales</h3>
+            <p>
+                Método de la inteligencia artificial que enseña a las computadoras a procesar datos de una manera que
+                está inspirada en la forma en que lo hace el cerebro humano. Utilizado ultimamente en detecciones de
+                patrones que es pueden observar en los artículos [10] y
+                [1] así como en detecciones en transtornos depresivos [13] y en
+                más áreas.
+            </p>
+            <p>
+                Es un método utilizado por muchas personas debido a su capacidad de resolver los problemas teniendo en
+                cuenta muchos factores y con un alto nivel de versatilidad.
+            </p>
+            <p>
+                En las redes neuronales van optimizando su comportamiento por medio del Descenso por Gradiente, lo que
+                nos dió una duda de: ¿Porqué se utiliza Descenso por Gradiente y no otra forma de optimización?
+            </p>
+            <p>
+                Lo que investigaremos en este articulo por medio de la aplicación de el algoritmo de optimización por
+                enjambre de luciérnagas y la comparación con el Descenso por Gradiente.
+            </p>
+        </section>
+        <section>
+            <h3>2.3 Algoritmos Genéticos</h3>
+            <p>
+                Es una herramienta basada en el proceso de selección natural para obtener posibles soluciones a los
+                problemas.
+            </p>
+        </section>
+    </section>
+    <section>
+        <h2>3 Proceso</h2>
+        <section>
+            <h3>
+                3.1 Inicios, estudios sobre el algoritmo
+            </h3>
+            <p>
+                La optimización basada en enjambres de luciérnagas, esta sujeta en 3 reglas, las cuales son:
+            </p>
+            <ol>
+                <li>
+                    Todas las luciérnagas son unisex.
+                </li>
+                <li>
+                    La fuerza de atracción es proporcional a la intensidad de la luminosidad emitida por el cuerpo,
+                    significando que la distancia entre las luciérnagas hace un papel considerablemente grande en el
+                    comportamiento de los enjambres. En caso de empate, se utiliza aleatoriamente una luciérnaga.
+                </li>
+                <li>
+                    Luminosidad, la intensidad de la luz en el punto inicial, se calcula con la función objetivo del
+                    problema.
+                </li>
+                <p>
+                    En cuanto a pseudocódigo, es de la siguiente manera [20]:
+                </p>
+                <ol>
+                    <li>
+                        Se tiene una funcion objetivo <i>f(x)</i>
+                    </li>
+                    <li>
+                        Se genera la población inicial con atributos aleatorios.
+                    </li>
+                    <li>
+                        La luminosidad de x<sub>i</sub> es determinado por <i>f(x)</i>
+                    </li>
+                    <li>
+                        Define &gamma;:
+                        <ol>
+                            <li>
+                                mientras que no este en su máxima generación,
+                            </li>
+                            <li>
+                                por cada luciernaga, se comparan y se adjustan los cambios necesarios para la
+                                optimización, contra cada luciernaga.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Se ordenan de mejores a peores
+                    </li>
+                    <li>
+                        Post visualizaciones
+                    </li>
+                </ol>
+            </ol>
+            <p>
+                Estas luciernagas se atraen, con una Luminosidad, que en este caso es lo mismo que la Funcion Objetivo,
+                más
+                eficiente en el mapa carteciano, con la formula
+            </p>
+            <p>
+                <img src="./images/fa-ecu.png" alt="firefly ecuation">
+            </p>
+            <p>
+                Siendo <i>x<sub>i0</sub></i> el lugar inicial de la luciernaga, y <i>x<sub>i1</sub></i>, el lugar
+                despues de que la luciernaga i se acerca
+                a j, tendriamos cuenta que <i>&beta;<sub>0</sub>e<sup>-&gamma;<sup>2</sup><sub>ij</sub></i> se refiere a
+                la formula gausseana de la ley del cuadrado
+                a la inversa aplicada a la luminosidad de una luciérnga y <i>(x<sub>y</sub>-x<sub>i</sub>)</i> la
+                distancia entre las luciernagas, en esa
+                sección es utilizada para hallar que tanto la luminosidad va a afectar al espacio <i>x<sub>i0</sub></i>
+                inicial, tambien
+                teniendo en cuenta, el &alpha;, que determina que tan fuerte afecta el factor aleatorio en los pasos.
+            </p>
+            <p>
+                En los últimos años, este algoritmo fue utilizado en varias áreas como:
+            </p>
+            <ol>
+                <li>
+                    Redes voladoras ad-hoc (FANET) [9].
+                </li>
+                <li>
+                    Problemas de diseño de ingeniería (EDP) [3].
+                </li>
+                <li>
+                    Artes marciales [18].
+                </li>
+                <li>
+                    Predicción de defectos de software [6].
+                </li>
+                <li>
+                    Ciberseguridad [15].
+                </li>
+            </ol>
+        </section>
+        <section>
+            <h3>3.2 Una idea de aplicación, y redes neuronales</h3>
+            <p>
+                Teniendo en cuenta este ciclo, que se repite hasta alcanzar el máximo número de iteraciones y su
+                naturaleza de
+                acerecarse a lo más optimo, quise aplicar este algoritmo a un aprendizaje de una red neuronal, pero, ¿de
+                qué forma?
+            </p>
+            <p>
+                "Las redes neuronales, concisten en simples procesadores, conectados, llamados neurones, produciendo una
+                secuencia
+                de activaciones de funciones con valores reales. los neurones de entrada son activados a partir de lo
+                percivido en
+                el medio ambiente, y las otras neuronas se activan a partir de los valores resultados por los otros
+                neurones en
+                contacto." - menciona Scmidhuber en su articulo de resumen sobre las redes neuronales
+                [14]. Este algoritmo interesante e innovador, es utilizada en varias áreas que necesitan clasificaciones más
+                complejas que lo normal, como en procesado de imágenes donde normalmente es mucho más difícil diferenciar los atributos
+                con solo simple lineas [19].
+            </p>
+            <p>
+                En las redes neuronales existe un proceso llamado "backpropagation", que se refiere a la propagación de
+                los errores
+                a los nodos de forma inversa para que estos puedan modificar los valores de los pesos de cada conexión,
+                para poder
+                acercar el valor output a lo ideal. En este proceso, los neurones, van reciviendo los errores, digamos
+                <i>E<sub>0</sub></i> en el
+                output, pero, ¿cómo estos se van propagando?
+            </p>
+            <figure>
+                <img src="./images/fig-1.png" alt="fig-1">
+                <figcaption>Figura 1: Mapa de nuestra red neuronal</figcaption>
+            </figure>
+            <p>
+                Como podemos ver en la figura 1, por cada neurona <i>n<sub>x</sub></i>, digamos en este momento, recive
+                inputs
+                <i>I<sub>n</sub></i>, pesos <i>w<sub>xy</sub></i> y un bias <i>b<sub>x</sub></i>, ademas de esto, los
+                neurones tienen una función de activación que ellos
+                ponen a los valores obtenidos para restringir los valores. En nuestro caso, utilizaremos el "ReLu" que
+                simplemente
+                es la aplicación de <i>max(0, (&sum;(I<sub>y</sub> * w<sub>xy</sub>) + b<sub>x</sub>))</i>, en nuestro
+                caso.
+            </p>
+            <p>
+                En el backpropagation, con el Error <i>E</i> que se obtuvo, el neutron de output <i>n<sub>5</sub></i>
+                recive 2 Inputs, que son los
+                resultados de <i>n<sub>3</sub></i> y <i>n<sub>4</sub></i> con pesos <i>W<sub>53</sub></i> y
+                <i>W<sub>54</sub></i>, respectivamente. hablando en modificar un valor,
+                tambein debemos hablar de las diferencias de los valores que ocurren al cambiar algun valor de peso, o
+                bias, que son
+                los factores que nosotros si podemos modificar. Siendo que:
+            </p>
+            <p>
+                <i>O = max(0, ((n<sub>3</sub> * W<sub>53</sub> + n<sub>4</sub> * W<sub>54</sub>) + b<sub>5</sub>))</i>
+            </p>
+            <p>
+                La formula para hallar el output y suponemos que existe la respuesta deseada <i>R</i>, de las cuales
+                utilizando la
+                formula de MAE, simplificandolo en un <i>O</i> y un <i>R</i>, podemos obtener el error de la siguiente
+                forma:
+            </p>
+            <p>
+                <i>E = (R - O)<sup>2</sup></i>
+            </p>
+            <p>
+                Siendo <i>E</i> el error de la iteración, podemos propagar esto a travez de los neutrones. siendo
+                <i>&delta;E</i> la
+                diferencia que se quiere obtener, debemos saber que cambios <i>&Delta;C</i> tenemos que efectuar en los
+                valores, note
+                que <i>&Delta;C</i> es la lista de los cambios que se deben efectuar en los atributos <i>W</i> y
+                <i>b</i>, tenemos que lo que
+                buscamos es \(\frac{\delta E}{\Delta C}\). Y esto podemos ampliar concatenando las diferenciales en
+                cadena. Siendo:
+            </p>
+            <math style="font-size: 2em">
+                <mfrac>
+                    <mrow>
+                        <mo>&delta;</mo>
+                        <mo>E</mo>
+                    </mrow>
+                    <mrow>
+                        <mo>&Delta;</mo>
+                        <mo>C</mo>
+                    </mrow>
+                </mfrac>
+                <mo>=</mo>
+                <mfrac>
+                    <mrow>
+                        <mo>&delta;</mo>
+                        <mo>E</mo>
+                    </mrow>
+                    <mrow>
+                        <mo>&delta;</mo>
+                        <mo>O</mo>
+                    </mrow>
+                </mfrac>
+                <mo>&#8290;</mo>
+                <mfrac>
+                    <mrow>
+                        <mo>&delta;</mo>
+                        <mo>O</mo>
+                    </mrow>
+                    <mrow>
+                        <mo>&delta;</mo>
+                        <mo>Z</mo>
+                    </mrow>
+                </mfrac>
+                <mo>&#8290;</mo>
+                <mfrac>
+                    <mrow>
+                        <mo>&delta;</mo>
+                        <mo>Z</mo>
+                    </mrow>
+                    <mrow>
+                        <mo>&Delta;</mo>
+                        <mo>C</mo>
+                    </mrow>
+                </mfrac>
+            </math>
+            <p>
+                Observandolo de esta manera, segun los cambios en los pesos o biases de los anteriores, se puede hallar
+                la
+                diferencial de que tanto cambia el error. Ya que esto se puede propagar hasta el imput si consideramos
+                <i>&Delta;C</i>
+                como la lista de todos los w y b de las conexiónes entre los neurones, podemos hallar el cambio del
+                error necesario
+                modificando los valores.
+            </p>
+        </section>
+        <section>
+            <h3>3.3 El por qué de utilizar FA</h3>
+            <p>
+                El FA (Firefly Algorithm o Optimización por enjambre de luciérnagas), es caracterizado por el
+                comportamiento de cada
+                uno de los vectores, referenciados como luciérnagas, acercandose lentamente a los valores que tiene el
+                mejor
+                resultado, atravez de la FO, ahora, ya que en este modelo de red neuronales, lo que queremos minimizar
+                es el error,
+                la cual si ponemos como FO a el proceso de obtener a <i>O</i>, podemos utilizar una población
+                considerable de
+                luciérnagas para obtener los datos ideales. para el O.
+            </p>
+        </section>
+
+        <section>
+            <h3>3.4 Problema del FA</h3>
+            <p>
+                El FA es pesado en terminos computacionales tal que solo para conseguir una iteración o generación, debe
+                recorrer
+                todos las población por toda la población, mejor dicho va a ser <i>O(p<sup>2</sup>)</i> siendo <i>p</i>
+                la población del enjambre.
+                para evitar que se desperdicie tiempo en los calculos de algunas luciérnagas que no aportan mucho en el
+                algoritmo,
+                le puse un life-span, una "vida util" a las luciérnagas, de esta forma teniendo un máximo valor
+                tolerable,
+                <i>T<sub>max</sub></i>, si una luciérnaga sobrepasa el valor de éste, multiples veces, esta luciérnaga
+                morirá y dará espacio
+                para luciérnagas de una nueva generación generado por algoritmos genéticos.
+            </p>
+        </section>
+        <section>
+            <h3>
+                3.5 Selección Natural, y Generación de luciérnagas
+            </h3>
+            <p>
+                Para que los enjambres esten trabajando en una máxima eficiencia y eficacia, tenemos que seleccionar a
+                los más
+                eficientes, de forma que si sobrepasan el umbral de <i>T<sub>max</sub></i>, tengan una vida menos,
+                cuando ellos se quedan sin
+                "vidas", ellos mueren y seden espacios a generaciones "más eficientes", que quiere decir, es que
+                utilizamos los
+                algoritmos genéticos y sacamos los valores del vector de el mejor y el segundo mejor, aleatoriamente
+                para crear una
+                luciérnaga que contenga génes más eficientes.
+            </p>
+        </section>
+    </section>
+    <section>
+        <h2>4 Aplicación de la Idea, Programación</h2>
+        <p>
+            Para el testeo de la teoría, utilizaremos el lenguaje python y programaremos de 0 los componentes necesarios
+            para el
+            testeo, los valores seran expresados en un grafo de matplotlib y los valores van a estar procesados
+            utilizando las
+            librerías numpy.
+        </p>
+        <section>
+            <h3>4.1 FireFly (FF.py)</h3>
+            <p>
+                El FF o Firefly, es un objeto que replica un vector de datos, o una luciérnaga en el grupo, tiene los
+                valores del
+                vector, o los atributos <i>C</i>, y los datos de entradas <i>D</i>, una función Objetivo <i>FO</i>, una
+                vida máxima, y un
+                umbral de tolerancia, <i>T<sub>max</sub></i>.
+            </p>
+        </section>
+        <section>
+            <h3>4.2 FireFlyAlgorithm (FFA.py)</h3>
+            <p>
+                El FFA, es un objeto que maneja toda la parte de las iteraciones, matlibs y los ciclos de vidas de las
+                luciérnagas
+                (FF). tiene los valores necesarios para calcular el FA, y tambien los valores como la máxima cantidad de
+                iteraciones.
+            </p>
+        </section>
+        <section>
+            <h3>
+                4.3 Aplicación en acción
+            </h3>
+            <p>
+                En este caso, utilizaremos los datos <i>D = [75.0, 12.5]</i> y la red neuronal de la figura figura 1.
+                Para
+                este caso, tenemos que tomar en cuenta que nuestra FO es bastante complejo, ya que tiene que calcular en
+                su vector
+                <i>C</i>, 15 valores. incluyendo varios pesos y biases. La FO, en este caso, sería lo siguiente, Siendo
+                que <i>I1</i> e
+                <i>I2</i> los inputs,
+            </p>
+            <p>
+                <i>O<sub>n<sub>1</sub></sub> = max(0, ((I<sub>1</sub>*W<sub>1I<sub>1</sub></sub> +
+                    I<sub>2</sub>*W<sub>1I<sub>2</sub></sub>) + b<sub>1</sub>))</i>
+            </p>
+            <p>
+                <i>O<sub>n<sub>2</sub></sub> = max(0, ((I<sub>1</sub>*W<sub>2I<sub>1</sub></sub> +
+                    I<sub>2</sub>*W<sub>2I<sub>2</sub></sub>) + b<sub>2</sub>))</i>
+            </p>
+            <p>
+                en la próxima capa:
+            </p>
+            <p>
+                <i>O<sub>n<sub>3</sub></sub> = max(0, ((O<sub>n<sub>1</sub></sub>*W<sub>31</sub> +
+                    O<sub>n<sub>2</sub></sub>*W<sub>32</sub>) + b<sub>3</sub>))</i>
+                <i>O<sub>n<sub>4</sub></sub> = max(0, ((O<sub>n<sub>1</sub></sub>*W<sub>41</sub> +
+                    O<sub>n<sub>2</sub></sub>*W<sub>42</sub>) + b<sub>4</sub>))</i>
+            </p>
+            <p>
+                y en la ultima capa,
+            </p>
+            <p>
+                <i>O<sub>n<sub>5</sub></sub> = max(0, ((O<sub>n<sub>3</sub></sub>*W<sub>53</sub> +
+                    O<sub>n<sub>4</sub></sub>*W<sub>54</sub>) + b<sub>5</sub>))</i>
+            </p>
+            <p>
+                lo cual todo este proceso es el cálculo de las FF para hallar su luminosidad.
+            </p>
+            <p>
+                En efecto, el mecanismo trabaja considerablemente bien ya que promedia un 65 iteraciones (redondeado),
+                para
+                conseguir el minimo error considerable que es <i>MAE &lt; 0.00001 </i>.
+            </p>
+        </section>
+        <section>
+            <h3>4.4 Ejemplos de Ejecución</h3>
+            <p>
+                Vamos a ejecutar el programa 2 veces, con \(p=20, \alpha=0.5, gamma=0.001, T_{máx}=0.00001\).
+            </p>
+            <figure>
+                <img src="./images/fig-2.png" alt="figura 2">
+                <figcaption>Figura 2: Ejecución número 1</figcaption>
+            </figure>
+            <p>
+                En el caso de la figura figura 2, se ha culminando con :
+            </p>
+            <p>
+                <i>W<sub>1I1</sub>=-0.44944584, W<sub>1I2</sub>=-1., b<sub>1</sub>=-0.3084703</i>
+                <br>
+                <i>W<sub>2I1</sub>=0.75759575, W<sub>1I2</sub>=1., b<sub>1</sub>=0.76806547</i>
+                <br>
+                <i>W<sub>31</sub>=-0.78746101, W<sub>32</sub>=0.22757309, b<sub>3</sub>=-0.19561072</i>
+                <br>
+                <i>W<sub>41</sub>=-0.84307831, W<sub>52</sub>=0.74153965, b<sub>4</sub>=-0.28235573</i>
+                <br>
+                <i>W<sub>53</sub>=1., W<sub>54</sub>=0.63139311, b<sub>5</sub>=0.25038155</i>
+            </p>
+            <p>Con:</p>
+            <p>
+                <i>MAE=2.4712424674228674e-06</i>
+            </p>
+            <p>
+                En el caso de la figura figura 3, se ha culminando con :
+            </p>
+            <p>
+                <i>
+                    W<sub>1I1</sub> = -0,20669995,W<sub>1I2</sub> = 0,05972356,b<sub>1</sub> = -0,38686369
+                    <br>
+                    W<sub>2I1</sub> = 0,60723874,W<sub>2I2</sub> = 0,84279182,b<sub>2</sub> = -0,43296255
+                </i>
+            </p>
+            <figure>
+                <img src="./images/fig-3.png" alt="figura 3">
+                <figcaption>Figura 3: Ejecución número 1</figcaption>
+            </figure>
+            <p>
+                <i>
+                    W<sub>31</sub> = -0,87029076,W<sub>32</sub> = 0,83567679,b<sub>3</sub> = 0,07652005
+                    <br>
+                    W<sub>41</sub> = 0,60406214,W<sub>42</sub> = 1.,b<sub>4</sub> = -0,59154027
+                    <br>
+                    W<sub>53</sub> = 0,65797163,W<sub>54</sub> = 0,334031,b<sub>5</sub> = -0,03343556
+                </i>
+                <br>
+                Con
+                <br>
+                <i>MAE = 7,993634146033143e - 06</i>
+                <br>
+                donde podemos observar que el algoritmo está pudiendo solucionarlo en menos de 50 iteraciones, esto
+                cambia drásticamente dependiendo de los valores que damos.
+            </p>
+        </section>
+        <section>
+            <h3>4.5 Población</h3>
+            <p>
+                Por ejemplo, la población <i>p</i> es un factor muy importante en esta investigación,
+                ya que cuando la cantidad de población es mayor, el tiempo de computo escala de forma cuadrática, en
+                cambio, lo
+                que asegura es que por la cantidad de población tenderá a tener unas luciernagas que si ya esten en
+                rangos
+                aceptables, ya que sus vectores son generadas de forma aleatoria, que acelerará muchisimo más el proceso
+                de
+                encontrar el óptimo.
+            </p>
+        </section>
+        <section>
+            <h3>4.6 &alpha;</h3>
+            <p>
+                El <i>&alpha;</i> es una variable que podemos cambiar, un hiper
+                parametro, que afecta al nivel de cambios producidos aleatoriamente en los movimientos sin importancia
+                de la
+                luminosidad, Este numero <i>&alpha;</i> tiene una conducta muy interesante, cuando empezamos con
+                <i>&alpha; = 1.0</i>, por
+                ejemplo, los valores tienden a cambiar muchisimo, en cambio cuando <i>&alpha;</i> tiende a 0, el cambio
+                no es para
+                nada repentino y solo se mueven lentamente a la luminosidad más fuerte. Esto no es tan difícil entender,
+                solo lo
+                interesante empieza cuando <i>&alpha;</i> tiende a 0, y la <i>p</i> es mayor, el computo suele ser
+                muchas veces más
+                rápido, esto se puede entender que hay muchísimos puntos aleatorios que estirarán a la luciérnaga de
+                forma que
+                cambiará muchos pasos en una iteración que podrá mejorar el vector del FF en veces más de lo normal,
+                pero en
+                cambio si no hay FF con lindos datos, normalmente computa el problema en 5 veces mas lento de lo normal.
+                Por
+                esto, tener una poblacion y un alpha bien optimizado puede mejorar la función de este algoritmo
+            </p>
+        </section>
+    </section>
+    <section>
+        <h2>5 Comparación con Descenso por Gradiente</h2>
+        <p>
+            Cuando hablamos de optimización en una red de neurones, no
+            podemos obviar la comparación entre el metodo más utilizado, que es el Descenso por Gradiente (DpG),
+            comparando
+            los 2 algoritmos, generando datasets totalmente aleatorios en cada ejecución, obtenemos varios puntos
+            interesantes. En simple vista, podemos observar desde la figura 4 hasta la 7 que mas o
+            menos existen 3 casos posibles
+        </p>
+        <figure>
+            <img src="./images/fig-4.png" alt="figura 4">
+            <figcaption>Figura 4: Ejecución número 1</figcaption>
+        </figure>
+        <figure>
+            <img src="./images/fig-5.png" alt="figura 5">
+            <figcaption>Figura 5: Ejecución número 2</figcaption>
+        </figure>
+        <figure>
+            <img src="./images/fig-6.png" alt="figura 6">
+            <figcaption>Figura 6: Ejecución número 3</figcaption>
+        </figure>
+
+        <ol>
+            <li>
+                Que FA sea más óptimo que DpG.
+            </li>
+            <li>
+                Que DpG sea más óptimo que FA.
+            </li>
+            <li>
+                Que ambos estén al mismo nivel.
+            </li>
+        </ol>
+        <p>
+            esto suele entenderse que le hace una buena competencia, pero en realidad no es el caso,
+            se nota muchísimo la ineficiencia, digamos del FA en la aplicación.
+        </p>
+        <figure>
+            <img src="./images/fig-7.png" alt="figura 6">
+            <figcaption>Figura 7: Ejecución número 4</figcaption>
+        </figure>
+
+        <section>
+            <h3>5.1 Problemas del FA, comparando con DpG</h3>
+            <p>
+                Primero, antes que nada, se nota
+                muchisimo la diferencia en tiempo de computo, FA tardando mas del doble comparando con DpG, en tanto a
+                optimización, se nota que el DpG, por lo pequeño que sea el paso, esta claramente optimizando cada vez
+                su peso,
+                pero la otra mitad, el FA no se nota una mejora desde un umbral, que podemos entender que se estanca en
+                un
+                mínimo local,ya que tiende a quedarse en la altura más eficiente obtenido inicialmente en ek algoritmo.
+                En los
+                casos que FA gana a DpG, el FF del algoritmo ya mostraba una eficiencia más alta en el algoritmo, pero,
+                en este
+                paso tambien, ayuda a mostrar una ventaja que DpG tiene sobre FA. Explicándolo detalladamente, viendo la
+                figura
+                4, se ve que tiene el mismo nivel de MSE, pero en realidad, si existía más iteraciones, es muy
+                probable que DpG le halla superado a FA. como en la figura 5.
+            </p>
+        </section>
+    </section>
+
+    <section>
+        <h2>6 Función con un computo elevado</h2>
+        <p>
+            En esta sección probaremos el programa con una red neuronal de 50 inputs, 100 neurones en la capa 1, 50
+            en la capa 2 que produce un Output. Los valores son generados de forma totalmente aleatoria. El resultado de
+            una
+            prueba se puede observar en la figura 8.
+        </p>
+        <figure>
+            <img src="./images/fig-8.png" alt="figura 8">
+            <figcaption>Figura 8: Ejecución de una función con un computo elevado</figcaption>
+        </figure>
+        <p>
+            Podemos observar que obtenemos los mismos resultados que
+            en una funcion de computo bajo, en todos los aspectos podemos
+            decir que el metodo de DpG le supera al FA. En cuanto a tiempo
+            de computo, es mucho mas rapido y seguro el DpG, tambien que
+            podemos ver que el error de DpG tiene una optimización efectiva,
+            y en comparación, FA encuentra un optimo, y le dificulta encontrar
+            un valor mejor que este, y por la naturaleza que todos se juntan
+            al "mas optimo"del enjambre, hace que todas las luciernagas se
+            acerquen a ese punto, haciendo que mientras que alguna luciérnaga
+            pase por un punto mejor por suerte, el metodo siempre va a ser
+            peor en este tipo de trabajos.
+        </p>
+    </section>
+    <section>
+        <h2>¿Siempre dpg es mejor que fa?</h2>
+        <p>
+            A través de las pruebas anteriores,
+            podemos notar facilmente que DpG es superior en todos los aspectos frente a FA, esto es por varios factores,
+            por
+            ejemplo, hablando de la eficiencia y rapidez de computo, por la naturaleza el FA que calcula la funcion por
+            cada
+            luciernaga, es más lento que un DpG, pero por ejemplo en una optimización de una función con muchos óptimos
+            locales, como la de Rastringin.
+        </p>
+        <img src="./images/rastringin-ecu.png" alt="rastringin ecuation">
+        <figure>
+            <img src="./images/fig-9.png" alt="figura 9">
+            <figcaption>Figura 9: Función Rastringin</figcaption>
+        </figure>
+        <p>
+            Que graficada, es observable como esta en la figura 9, tiene muchos óptimos locales. Lo que hace
+            que sea dificil encontrar el óptimo local de la función. El óptimo global de la funcion es FO = 0, pero es
+            dificil
+            para un metodo como descenso por gradiente sin alguna modificación, encontrar dicho óptimo.
+        </p>
+        <figure>
+            <img src="./images/fig-10.png" alt="figura 10">
+            <figcaption>Figura 10: Función Rastringin en operación por ambos metodos</figcaption>
+        </figure>
+        <p>
+            Cuando ejecutamos ambos metodos para la optimización de la función,
+            obtenemos el resultado de la figura 10, por conveniencia, se hace que ambos metodos paren cuando
+            llegan a un umbral de 0.0001 en FO. podemos observar que en este caso, el FA, fué más eficiente en tanto a
+            rapidez de encontrar el valor, pero cuando hablamos de tiempo, el DpG es mucho más eficiente en la
+            aplicación en
+            la vida real.
+        </p>
+    </section>
+    <section>
+        <h2>Conclusion</h2>
+        <p>
+            La Optimización por enjambre de luciernagas (FA), es una tecnología
+            innovativa, que nos permite optimizar las variables de una función, minimizando el error entre el resultado
+            de
+            la funcion con el resultado esperado.
+            <br>
+            A traves de esta investigación, logramos profundizar el conocimiento
+            sobre el algoritmo, así también su utilización en el area de Inteligencia artificial, aplicandolo en la
+            optimización de los pesos de los perceptrones, y comparar su rendimiento con el algoritmo más utilizado para
+            el
+            area que es el Descenso por Gradiente (DpG).
+            <br>
+            Logramos obtener los fuertes del algoritmo, asi como sus
+            debilidades, lo más notable era que el FA, debido a su alto tiempo de computo, utiliza una cantidad elevada
+            de
+            recursos, comparado con el DpG, y no es que sea mejor su rendimiento. lo que hace que podemos decir que no
+            es
+            rentable sustituir el DpG por el FA.
+            <br>
+            Cabe destacar que el FA, es mejor en otros aspectos que el DpG, como
+            podemos ver en la comparación, el FA, es mas eficiente cuando hablamos de optimizaciones de funciones de
+            bajo
+            nivel de computo, superandole en rendimiento, pero no en tiempo de ejecución al DpG.
+            <br>
+            En cuanto a Selección
+            Natural y el algoritmo genético en el FA, fue eficiente y no eficiente, mejor dicho, depende de la suerte,
+            ya
+            que los hijos de las "mejores" luciérnagas, toman los datos de forma aleatoria de los padres, puede crear
+            una
+            generación de luciernagas no tan buenas, que puede afectar negativamente al algoritmo.
+            <br>
+            En Síntesis, el FA, es
+            un algoritmo de optimización muy bueno, dependiendo del área que se utiliza, y los parámetros que le recibe,
+            lo
+            que hace importante el proceso de validación para decidir buenos hiperparametros para el algoritmo.
+        </p>
+    </section>
+    <section>
+        <h2>Referencias</h2>
+        [1] Edgar Alamilla-Jiménez, Addy Bolivar-Cime, and Edilberto Nájera. 2022. REDES
+        NEURONALES Y SU APLICACIÓN EN LA CLASIFICACIÓN DE PATRONES.
+        Revista de la Facultad de Ciencias 11 (2022). Issue 1. https://doi.org/10.15446/rev.
+        fac.cienc.v11n1.99173
+        <br>
+        [2] Mka Ariyaratne and Tgi Fernando. 2023. A Comprehensive Review of the Firefly
+        Algorithms for Data Clustering. Vol. 1054.
+        https://doi.org/10.1007/978-3-031-
+        09835-2_12
+        <br>
+        [3] M. A. El-Shorbagy and Adel M. El-Refaey. 2022. A hybrid genetic-firefly algo-
+        rithm for engineering design problems. Journal of Computational Design and
+        Engineering 9 (4 2022), 706–730. Issue 2. https://doi.org/10.1093/jcde/qwac013
+        <br>
+        [4] Absalom E. Ezugwu. 2020. Nature-inspired metaheuristic techniques for auto-
+        matic clustering: a survey and performance study. SN Applied Sciences 2 (2020).
+        Issue 2. https://doi.org/10.1007/s42452-020-2073-0
+        <br>
+        [5] Iztok Fister, Xin She Yang, Janez Brest, and Dušan Fister. 2013. A brief review of
+        nature-inspired algorithms for optimization. Issue 3.
+        <br>
+        [6] J. Harikiran, B. Sai Chandana, B. Srinivasarao, B. Raviteja, and Tatireddy Subba
+        Reddy. 2023. Software Defect Prediction Based Ensemble Approach. Computer
+        Systems Science and Engineering 45 (2023). Issue 3. https://doi.org/10.32604/csse.
+        2023.029689
+        <br>
+        [7] Niloofar Khoshniat, Amirhossein Jamarani, Ahmad Ahmadzadeh, Mostafa Haghi
+        Kashani, and Ebrahim Mahdipour. 2023. Nature-inspired metaheuristic methods
+        in software testing. Soft Computing (2023). https://doi.org/10.1007/s00500-023-
+        08382-8
+        <br>
+        [8] R. Arun Kumar, J. Vijay Franklin, and Neeraja Koppula. 2022. A Comprehensive
+        Survey on Metaheuristic Algorithm for Feature Selection Techniques. Materials
+        Today: Proceedings 64 (2022). https://doi.org/10.1016/j.matpr.2022.04.803
+        <br>
+        [9] Jan Lansky, Amir Masoud Rahmani, Mazhar Hussain Malik, Efat Yousefpoor,
+        Mohammad Sadegh Yousefpoor, Muhammad Umair Khan, and Mehdi Hosseinza-
+        deh. 2023. An energy-aware routing method using firefly algorithm for flying ad
+        hoc networks. Scientific Reports 13 (2023). Issue 1. https://doi.org/10.1038/s41598-
+        023-27567-7
+        <br>
+        [10] Abraham E. Gamarra M. and Tatiana L. Munive R. 2022. Reconocimiento de
+        patrones con redes neuronales. Prospectiva Universitaria 12 (2022). Issue 1.
+        https://doi.org/10.26490/uncp.prospectivauniversitaria.2015.12.452
+        <br>
+        [11] Rehab Hamza Obeid and Nazik J. Sadik. 2023. Selection of variables Affecting
+        Red Blood Cell by Firefly Algorithm. Journal of Economics and Administrative
+        Sciences 29 (2023). Issue 136. https://doi.org/10.33095/jeas.v29i136.2610
+        <br>
+        [12] Jeng Shyang Pan, Pei Hu, Václav Snášel, and Shu Chuan Chu. 2023. A survey on
+        binary metaheuristic algorithms and their engineering applications. Artificial
+        Intelligence Review 56 (2023). Issue 7. https://doi.org/10.1007/s10462-022-10328-9
+        <br>
+        [13] Kimberly Pocco. 2022. Un sistema experto para el diagnóstico del trastorno
+        depresivo basado en redes neuronales. Un sistema experto para el diagnóstico del
+        trastorno depresivo basado en redes neuronales 14 (2022). Issue 2.
+        <br>
+        [14] Jürgen Schmidhuber. 2015. Deep Learning in neural networks: An overview.
+        https://doi.org/10.1016/j.neunet.2014.09.003
+        <br>
+        [15] Shishir Kumar Shandilya, Bong Jun Choi, Ajit Kumar, and Saket Upadhyay.
+        2023. Modified Firefly Optimization Algorithm-Based IDS for Nature-Inspired
+        Cybersecurity. Processes 11 (2023). Issue 3. https://doi.org/10.3390/pr11030715
+        <br>
+        [16] H. Swapnarekha, Janmenjoy Nayak, H. S. Behera, Pandit Byomakesha Dash,
+        and Danilo Pelusi. 2023. An optimistic firefly algorithm-based deep learning
+        approach for sentiment analysis of COVID-19 tweets. Mathematical Biosciences
+        and Engineering 20 (2023). Issue 2. https://doi.org/10.3934/mbe.2023112
+        <br>
+        [17] Luisa Fernanda Vargas-Pardo and Frank Nixon Giraldo-Ramos. 2021. Firefly
+        algorithm for facility layout problem optimization. Visión electrónica 15 (2021).
+        Issue 2. https://doi.org/10.14483/22484728.17474
+        <br>
+        [18] Qinglong Wang and Yong Sui. 2023. The Calculation of Sports Injury Sensitivity
+        of Martial Arts Athletes Based on ROC Curve. Applied Mathematics and Nonlinear
+        Sciences 8 (2023). Issue 1. https://doi.org/10.2478/amns.2023.1.00015
+        <br>
+        [19] Zonghan Wu, Shirui Pan, Fengwen Chen, Guodong Long, Chengqi Zhang, and
+        Philip S. Yu. 2021. A Comprehensive Survey on Graph Neural Networks. IEEE
+        Transactions on Neural Networks and Learning Systems 32 (2021). Issue 1. https:
+        //doi.org/10.1109/TNNLS.2020.2978386
+        <br>
+        [20] Xin She Yang. 2009. Firefly algorithms for multimodal optimization. Lecture Notes
+        in Computer Science (including subseries Lecture Notes in Artificial Intelligence and
+        Lecture Notes in Bioinformatics) 5792 LNCS. https://doi.org/10.1007/978-3-642-
+        04944-6_14
+    </section>
+</body>
+
+</html>

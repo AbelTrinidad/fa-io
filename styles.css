@@ -1,0 +1,19 @@
+body {
+    padding: 2rem;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    span {
+        width: 100%;
+    }
+}
+
+img {
+    max-width: 100%;
+}
